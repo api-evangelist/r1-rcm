@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,123 +9,56 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: R1 RCM
 providerId: r1-rcm
-publisherName: R1 RCM
-serviceCategory: API
+publisherName: R1 RCM Inc.
+serviceCategory: Healthcare Services
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Healthcare
   - Revenue Cycle
-  - Technology
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the R1 RCM API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+notes: R1 RCM does not publish a per-API meter or invoice surface; commercial terms are folded into
+  the broader revenue-cycle services contract.
+description: FOCUS-aligned FinOps for R1 RCM is contract-based; the engagement is a managed services
+  agreement rather than per-API metering.
+sources:
+  - https://www.r1rcm.com/
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Managed Services Contract
+  billingFrequency: Per-Invoice
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: R1 RCM
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Healthcare Services
   ProviderName: R1 RCM
-  PublisherName: R1 RCM
-  InvoiceIssuerName: R1 RCM
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: R1 RCM Inc.
+  InvoiceIssuerName: R1 RCM Inc.
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: services_contract
+    description: Revenue-cycle services contract; pricing usually scales with collected revenue and
+      service scope rather than API calls.
+    unit: varies
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: R1 RCM API
-    baseURL: https://api.r1rcm.com
-    tags:
-      - Healthcare
-      - Revenue Cycle
-      - Technology
-    serviceName: R1 RCM API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - contract
+principles:
+  - name: Visibility
+    description: Surface R1 RCM spend through the customer-side procurement and finance systems; the
+      vendor does not publish a self-serve usage API.
+  - name: Allocation
+    description: Allocate the services fee against the patient-financial-services and revenue-cycle
+      cost centers covered by the contract.
+  - name: Optimization
+    description: Optimization happens at services contract renewal; review collection-rate and DSO performance
+      against the agreed service levels.
+  - name: Accountability
+    description: Finance and revenue-cycle leadership co-own the R1 RCM relationship; clinical IT routes
+      integration changes through the R1 account team.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
