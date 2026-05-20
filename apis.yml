@@ -28,6 +28,8 @@ apis:
     description: >-
       The R1 RCM API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/r1-rcm
   - type: Website
     url: https://www.r1rcm.com
 maintainers:
