@@ -2,7 +2,7 @@ aid: r1-rcm
 url: https://raw.githubusercontent.com/api-evangelist/r1-rcm/refs/heads/main/apis.yml
 name: R1 RCM
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Healthcare
   - Revenue Cycle
@@ -19,7 +19,7 @@ apis:
       - Healthcare
       - Revenue Cycle
       - Technology
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.r1rcm.com
     humanURL: https://developer.r1rcm.com
     properties:
