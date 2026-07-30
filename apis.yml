@@ -2,7 +2,19 @@ aid: r1-rcm
 url: https://raw.githubusercontent.com/api-evangelist/r1-rcm/refs/heads/main/apis.yml
 name: R1 RCM
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: enterprise
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/r1-rcm.png
 tags:
   - Healthcare
   - Revenue Cycle
