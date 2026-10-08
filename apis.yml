@@ -51,6 +51,12 @@ apis:
     description: >-
       The R1 RCM API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: Plans
+    url: plans/r1-rcm-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/r1-rcm-rate-limits.yml
+  - type: FinOps
+    url: finops/r1-rcm-finops.yml
   - type: TrustCenter
     url: security/r1-rcm-trust-center.yml
   - type: DomainSecurity
